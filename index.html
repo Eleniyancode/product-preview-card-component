@@ -5,32 +5,225 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | Product preview card component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      background-color: hsl(30, 38%, 92%)
+    }
+    
+    main {
+      width: 320px;
+      padding: 20px;
+      /* border: 2px solid white; */
+      display: flex;
+      flex-direction: column;
+      column-gap: 0px;
+    }
+
+.fraunces-h2, .new-price {
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:
+    "SOFT" 0,
+    "WONK" 0;
+  font-size: 28px;
+  color: hsl(212, 21%, 14%);
+}
+
+.new-price {
+  color: hsl(158, 36%, 37%);
+}
+
+
+
+
+.montserrat-perfume, .old-price{
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 3px;
+  font-size: 14px;
+  color: hsl(228, 12%, 48%);
+}  
+
+.old-price {
+  font-size: 10px;
+  /* border: 2px solid white; */
+  text-decoration: line-through;
+  margin: 15px;
+  vertical-align: super;
+}
+.montserrat-flora {
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+  word-spacing: 1px;
+  color: hsl(228, 12%, 48%);
+}  
+.mobile-image {
+  width: 320px;
+  
+}
+
+.image {
+  border: 2px solid white;
+  padding: 0px
+}
+
+
+.description {
+  border: 2px solid white;
+  background-color: hsl(0, 0%, 100%);
+  padding-inline: 15px;
+   
+}
+
+button {
+    background-color: hsl(158, 36%, 37%);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Space between icon and text */
+    transition: background 0.3s ease;
+    width: 280px;
+    margin: 10px;
+    margin-bottom: 20px;
+  
+}
+
+.button-text {
+  /* border: 2px solid white; */
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+  word-spacing: 1px;
+}
+
+button:hover {
+  background-color: hsl(158, 79%, 20%);
+}
+
+.desktop-image {
+  display: none;
+}
+
+@media (min-width: 418px) {
+  /*Styles for larger screens */
+  main {
+      width: 600px;
+      padding: 0px;
+      border: 2px solid white;
+      display: flex;
+      flex-direction: row;
+      gap: 0px;
+    }
+    .mobile-image {
+      display: none;
+    }
+    .desktop-image {
+      display: flex;
+      width: 300px;
+      border-radius: 5px;
+
+    }
+
+    .description {
+      padding: 30px;
+      padding-bottom: 10px;
+    }
+
+    .fraunces-h2 {
+      font-size: 35px;
+      /* border: 2px solid black;*/ 
+      line-height: 35px;
+      width: 250px;
+    }
+    
+    .montserrat-flora {
+      line-height: 25px;
+      width: 290px;
+      font-size: 15px;
+    }
+    
+    .new-price {
+      /* border: 2px solid black; */
+      height: 40px;
+      margin-bottom: 400px;
+      
+}
+
+} 
+
+footer {
+  text-align: center;
+padding: 20px 0;
+position: fixed;
+bottom: 0;
+width: 100%;
+}
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
 <body>
-
-  Perfume
-
-  Gabrielle Essence Eau De Parfum
-
-  A floral, solar and voluptuous interpretation composed by Olivier Polge, 
-  Perfumer-Creator for the House of CHANEL.
-
-  $149.99
-  $169.99
-
-  Add to Cart
+  <main>
+    <section class="image">
+      <img class="mobile-image" src="./images/image-product-mobile.jpg" alt="Perfume Image">
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+      <img class="desktop-image" src="./images/image-product-desktop.jpg" alt="Perfume Image">
+    </section>
+  
+  <section class="description">
+    <p class="montserrat-perfume">PERFUME</p>
+  
+    <h1 class="fraunces-h2">Gabrielle Essence Eau De Parfum</h1>
+  
+    <p class="montserrat-flora">A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+    Perfumer-Creator for the House of CHANEL.</p>
+  
+    <span class="new-price">$149.99</span>
+    <span class="old-price">$169.99</span>
+  
+    <button>
+      <img src="./images/icon-cart.svg" alt="Cart-Icon-Image">
+      <span class="button-text">Add to Cart</span>
+    </button>
+    
+  </section>
+
+  </main>
+
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </footer>
+  
 </body>
 </html>
